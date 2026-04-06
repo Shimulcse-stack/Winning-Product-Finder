@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Winning Product Finder</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="badge">Shimul_CSE</div>
+  <h1>Winning Product<br>Finder</h1>
+  <p>Enter your goals — get a product, profit plan & action steps.</p>
+</header>
+
+<!-- INPUT FORM -->
+<div class="card" id="formCard">
+  <div class="card-title">🎯 Your Goals</div>
+
+  <div class="field">
+    <label>Target Monthly Profit ($)</label>
+    <input type="number" id="targetProfit" placeholder="e.g. 1000" min="1">
+  </div>
+
+  <div class="field">
+    <label>Budget (optional — $)</label>
+    <input type="number" id="budget" placeholder="e.g. 500" min="0">
+  </div>
+
+  <div class="field">
+    <label>Select a Niche</label>
+    <div class="select-wrap">
+      <select id="niche">
+        <option value="">— Choose a niche —</option>
+        <option value="health">Health & Wellness</option>
+        <option value="beauty">Beauty & Skincare</option>
+        <option value="fitness">Fitness & Sports</option>
+        <option value="home">Home & Kitchen</option>
+        <option value="tech">Tech Accessories</option>
+        <option value="pets">Pet Products</option>
+        <option value="kids">Kids & Baby</option>
+        <option value="fashion">Fashion & Accessories</option>
+      </select>
+    </div>
+  </div>
+
+  <button class="btn" onclick="findProduct()">👉 Find Winning Product</button>
+</div>
+
+<!-- RESULTS -->
+<div id="results">
+
+  <div class="card fade-up" id="productCard">
+    <div class="card-title">🏆 Suggested Product</div>
+    <div class="warning" id="budgetWarning">⚠️ Your budget may be tight for the required units. Consider starting with a smaller batch.</div>
+    <div class="product-header">
+      <div class="product-icon" id="productIcon"></div>
+      <div>
+        <div class="product-name" id="productName"></div>
+        <div class="product-niche" id="productNicheLabel"></div>
+      </div>
+    </div>
+
+    <div class="card-title">💰 Profit Breakdown</div>
+    <div class="profit-grid">
+      <div class="profit-cell">
+        <div class="val" id="costVal"></div>
+        <div class="lbl">Cost / Unit</div>
+      </div>
+      <div class="profit-cell">
+        <div class="val" id="priceVal"></div>
+        <div class="lbl">Sell Price</div>
+      </div>
+      <div class="profit-cell highlight">
+        <div class="val" id="profitVal"></div>
+        <div class="lbl">Profit / Unit</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card fade-up delay-1" id="unitsCard">
+    <div class="card-title">📦 Units Needed</div>
+    <div class="units-banner">
+      <div class="units-num" id="unitsNum"></div>
+      <div class="units-label">units to sell per month</div>
+      <div class="units-sublabel" id="unitsPerDay"></div>
+    </div>
+  </div>
+
+  <div class="card fade-up delay-2" id="planCard">
+    <div class="card-title">🗺️ Action Plan</div>
+    <ul class="steps" id="actionSteps"></ul>
+  </div>
+
+  <div style="max-width:560px;margin:0 auto;">
+    <button class="reset-btn" onclick="reset()">← Start Over</button>
+  </div>
+
+</div>
+
+<footer>Winning Product Finder · Developed by Shimul_CSE</footer>
+<script src="script.js"></script>
+</body>
+</html>
